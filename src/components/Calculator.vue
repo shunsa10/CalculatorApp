@@ -1,45 +1,36 @@
 <template>
 <div id="wrap">
     <div>
-        <div class="result">{{ showNum }}</div>
+        <div :showNum="showNum" class="result">{{ showNum }}</div>
         <p>
             OP : <b>{{ currentOperator }}</b>
         </p>
         <div class="buttons">
-            <v-btn 
-            class="mx-2" 
-            fab dark color="indigo" 
-            @click="clearAll">
+
+            <v-btn class="mx-2" fab dark color="indigo" @click="clearAll">
                 <v-icon dark>
                     AC
                 </v-icon>
             </v-btn>
-            <v-btn 
-            class="mx-2" 
-            fab dark color="indigo" 
-            v-for="num in buttons.num" 
-             :key="num" 
-             :id="'btn-' + num" 
-            @click="selectNumber(num);">
-                <v-icon dark>
-                    {{ num }}
-                </v-icon>
-            </v-btn>
-            <v-btn 
-            class="mx-2" 
-            fab dark 
-            v-for="op in buttons.op" 
-             :key="op" 
-             :id="'btn-' + op" 
-            @click="selectOparator(op);">
-                <v-icon dark>
-                    {{ op }}
-                </v-icon>
-            </v-btn>
-            <v-btn 
-            class="mx-2" 
-            fab dark color="indigo" 
-            @click="showResult">
+            <div class="numop">
+                <div class="num">
+                    <v-btn class="mx-2" fab dark color="indigo" v-for="num in buttons.num" :key="num" :id="'btn-' + num" @click="selectNumber(num);">
+                        <v-icon dark>
+                            {{ num }}
+                        </v-icon>
+                    </v-btn>
+                </div>
+
+                <div class="op">
+                    <v-btn class="mx-2" fab dark v-for="op in buttons.op" :key="op" :id="'btn-' + op" @click="selectOparator(op);">
+                        <v-icon dark>
+                            {{ op }}
+                        </v-icon>
+                    </v-btn>
+                </div>
+            </div>
+
+            <v-btn class="mx-2" fab dark color="teal" @click="showResult">
                 <v-icon dark>
                     =
                 </v-icon>
@@ -50,15 +41,19 @@
 </template>
 
 <script>
+// import Log from '../views/Log.vue'
 export default {
+    // components: {
+    //     Log
+    // },
     name: 'FloatingButtons',
     data() {
-        
+
         return {
             buttons: {
                 num: [
                     "7", "8", "9",
-                    "4", "5", "6",
+                    "3", "4", "5",
                     "1", "2", "3",
                     "0", "00", ".",
                 ],
@@ -109,8 +104,6 @@ export default {
         //next 後
         //index 演算子
         setTotalNum(prev, next, index) {
-
-
 
             if (this.opArray[index] === "+") {
                 return prev + next;
@@ -205,11 +198,29 @@ export default {
     }
 
     .buttons {
-        display: flex;
+
         flex-wrap: wrap;
         justify-content: space-between;
         width: 250px;
         margin: 0 auto 1rem;
+
+        .numop {
+            display: flex;
+            height: 280px;
+        }
+
+        .num {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .op {
+            display: flex;
+            margin-left: .5rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
         /* button {
     width: 30%;
