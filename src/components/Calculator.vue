@@ -1,20 +1,29 @@
 <template>
 <div id="wrap">
     <div>
-        <div :showNum="showNum" class="result">{{ showNum }}</div>
+        <div class="result">{{ showNum }}</div>
         <p>
             OP : <b>{{ currentOperator }}</b>
         </p>
         <div class="buttons">
 
-            <v-btn class="mx-2" fab dark color="indigo" @click="clearAll">
+            <v-btn 
+            class="mx-2" 
+            fab dark color="indigo" 
+            @click="clearAll">
                 <v-icon dark>
                     AC
                 </v-icon>
             </v-btn>
             <div class="numop">
                 <div class="num">
-                    <v-btn class="mx-2" fab dark color="indigo" v-for="num in buttons.num" :key="num" :id="'btn-' + num" @click="selectNumber(num);">
+                    <v-btn 
+                    class="mx-2" 
+                    fab dark color="indigo" 
+                    v-for="num in buttons.num" 
+                    :key="num" 
+                    :id="'btn-' + num" 
+                    @click="selectNumber(num);">
                         <v-icon dark>
                             {{ num }}
                         </v-icon>
@@ -22,7 +31,12 @@
                 </div>
 
                 <div class="op">
-                    <v-btn class="mx-2" fab dark v-for="op in buttons.op" :key="op" :id="'btn-' + op" @click="selectOparator(op);">
+                    <v-btn 
+                    class="mx-2" 
+                    fab dark v-for="op in buttons.op" 
+                    :key="op" 
+                    :id="'btn-' + op" 
+                    @click="selectOparator(op);">
                         <v-icon dark>
                             {{ op }}
                         </v-icon>
@@ -30,7 +44,10 @@
                 </div>
             </div>
 
-            <v-btn class="mx-2" fab dark color="teal" @click="showResult">
+            <v-btn 
+            class="mx-2" 
+            fab dark color="teal" 
+            @click="showResult">
                 <v-icon dark>
                     =
                 </v-icon>
@@ -119,12 +136,6 @@ export default {
         },
         // 数字ボタンを押した時
         selectNumber(num) {
-            // 正負を逆にする
-            //   if (num === "+/-") {
-            //     if (!this.isInsertNumber) return;
-            //     this.currentNumber = -1 * this.currentNumber;
-            //     return;
-            //   }
 
             // = を押したなら、０、falseに戻す
             if (this.isResult) {
