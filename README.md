@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  <img width="1440" alt="スクリーンショット 2021-09-13 16 44 41" src="https://user-images.githubusercontent.com/76087062/133044131-89db9055-f30b-4fa4-a024-890190d34c13.png">
+=======
+<img width="1440" alt="スクリーンショット 2021-09-13 16 44 41" src="https://user-images.githubusercontent.com/76087062/133044131-89db9055-f30b-4fa4-a024-890190d34c13.png">
+>>>>>>> d2e4a3a07278ee209bfe0d4a68b521caa6f7b36b
  
  **電卓アプリ**
 
