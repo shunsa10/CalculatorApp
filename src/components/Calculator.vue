@@ -59,7 +59,7 @@ export default {
                 ],
                 op: ["+", "mdi-minus", "/", "*"]
             },
-            isInsertNumber: true, // 数字入力中かどうか
+            isInsertNumber: true, // 数字入力中かどうかインサート
             isResult: false, // =を押した後かどうか
             currentOperator: "", // 現在選択中の演算子
             currentNumber: "0", // 現在選択中の数字
@@ -68,7 +68,7 @@ export default {
         };
     },
 
-    //算出プロパティ
+    //算出プロパティ 演算や文字列の連結を使用
     computed: {
         //divの中身
         showNum() {

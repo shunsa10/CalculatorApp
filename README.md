@@ -1,46 +1,42 @@
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+ <img width="1440" alt="スクリーンショット 2021-09-13 16 44 41" src="https://user-images.githubusercontent.com/76087062/133044131-89db9055-f30b-4fa4-a024-890190d34c13.png">
+ 
+ **電卓アプリ**
 
-###基礎
+    iPhoneのUIを参考に丸っこいデザインにし使っていてアニメーションを楽しんで欲しい
 
-例：
-エレメントで指定したapp(HTML内のidタグ)の中の{{}}とdataの中の値を比べている
-```
-new Vue({
-    el:"#app",
-    data:{
-        number:0
-    }
-})
-```
+    メインターゲットとしてiPhoneなどの端末を使っている人になる。
+
+    本来やりたかったことはアカウント機能とlog機能の追加だが今回の趣旨から離れるため削除した。
+
+    詳しくはIssuesに記述してます。
+
+
+URL  
+    <https://calculator-app-phi.vercel.app/>
 
 
 
 
-### MVVMはModel-View-ViewModelの頭文字
+ **工夫した点について**
 
-Vue.js はインタラクティブな Web インターフェイスを作るためのライブラリです。
-技術的に、Vue.js は MVVM パターンの ViewModel レイヤに注目しています。それは two way (双方向)バインディングによって View と Model を接続します。実際の DOM 操作と出力の形式はディレクティブとフィルタによって抽象化されています。
+    ボタンの大きさなど人の指で押しやすいように調整。
 
-model	JavaScrptのコード	データ処理の主体
-view	DOM(最終的なhtml)	人間に情報を伝える、操作を受け付ける末端
-ViewModel	vue.js	modelで処理したデータをどんなふうにveiwに流し込むかの制御、viewで受けた操作をmodelに伝える
+    プロパティは分かりやすい名前にし、条件分岐などelseで長くならないように工夫しました。
 
+    コードは拡張機能を利用し、綺麗に見やすく変更
 
 
+ **使用技術**
 
+    -Vue.js
 
-### MVVMの実現のために重要なData binding
+    -JavaScript
 
-Vue.jsがMVVMを実現するために取り入れている仕組みにData bindingがあります。
+ **ライブラリ**
 
-Data bindingは、よく「データを流し込む目印を打ち込む」と表現されます。まさにこの言葉がすべてを表しています。本解説の肝、「props down, event up」で再度、上記の表現について触れます。Data Bindingは、その言葉が表すように __”データを特定の個所に結びつけます”__。
+    -Vuex
 
-しがたって、元のデータが途中で変わっても目印を打ち込んであるので、自動で（Vue.jsが勝手に）目印を打ち込んだ箇所の値を書き換えてくれます。素敵ですね。
+    -Vue Router
 
-一方で誤解しやすいのがこのData bindingという考え方です。
-
-ついつい、Vue.jsにおけるData bindingは、常に双方向にデータが流れ込むものだと思ってしまいます。（特にv-modelに値をバインドすれば値の変更に対応できることを知ったばかりの初心者さんはそう思ってしまう。）もちろん、Vue.jsとしては双方向にデータのやり取りは可能です。しかし、単純なData bindingだけですべての仕様を実現することはできません。
+    -Vuetify
 
