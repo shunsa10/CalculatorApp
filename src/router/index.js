@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
+//test Vuex
 
 const routes = [
   {
